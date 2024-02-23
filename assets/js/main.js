@@ -19,7 +19,7 @@ for (let i = 0; i < images.length; i++) {
     console.log(image);
     
 
-    const imageMarkup = `<img class="visible" src="./assets/img/${image}" alt="">`
+    const imageMarkup = `<img class="${i === visibleImage ? 'visible' : ''}" src="./assets/img/${image}" alt="">`
 
     console.log(imageMarkup);
 
