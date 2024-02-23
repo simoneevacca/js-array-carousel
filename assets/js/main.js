@@ -6,7 +6,9 @@ const images = [
     '05.webp',
 ]
 
-const visibleImage = 0;
+const imageElement = document.querySelectorAll('.carosel img')
+
+let visibleImage = 0;
 
 const slides = document.querySelector('.carosel');
 const next = document.querySelector('.next');
@@ -16,13 +18,57 @@ const previus = document.querySelector('.previus');
 
 for (let i = 0; i < images.length; i++) {
     const image = images[i];
-    console.log(image);
-    
 
     const imageMarkup = `<img class="${i === visibleImage ? 'visible' : ''}" src="./assets/img/${image}" alt="">`
 
-    console.log(imageMarkup);
+
+    slides.insertAdjacentHTML('beforeend', imageMarkup);
 
 }
 
+
+previus.addEventListener ('click', function() {
+
+    visibleImage --
+    const currentImage = document.querySelector('img.visible');
+    
+    currentImage.classList.remove('visible');
+
+    const allImage = document.querySelectorAll('.carosel img');
+    console.log(allImage);
+
+    allImage[visibleImage].classList.add('visible')
+
+    if (visibleImage < 0) {
+        visibleImage = images.length - 1;
+
+    }
+    
+}
+)
+
+next.addEventListener ('click', function() {
+
+    visibleImage ++
+
+    const currentImage = document.querySelector('img.visible');
+    
+    currentImage.classList.remove('visible');
+
+    const allImage = document.querySelectorAll('.carosel img');
+    console.log(allImage);
+
+    allImage[visibleImage].classList.add('visible');
+
+    console.log(visibleImage, images.length);
+
+    if (visibleImage > images.length - 1) {
+        visibleImage = 0;
+
+    }
+    
+
+   
+}
+)
 
