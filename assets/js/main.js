@@ -1,4 +1,4 @@
-const image = [
+const images = [
     '01.webp',
     '02.webp',
     '03.webp',
@@ -12,5 +12,17 @@ const slides = document.querySelector('.carosel');
 const next = document.querySelector('.next');
 const previus = document.querySelector('.previus');
 
-console.log(image, visibleImage, slides);
+
+
+for (let i = 0; i < images.length; i++) {
+    const image = images[i];
+    console.log(image);
+    
+
+    const imageMarkup = `<img class="visible" src="./assets/img/${image}" alt="">`
+
+    console.log(imageMarkup);
+
+}
+
 
