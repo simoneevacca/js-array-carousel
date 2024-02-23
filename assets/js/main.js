@@ -42,10 +42,7 @@ previus.addEventListener ('click', function() {
 
     allImage[visibleImage].classList.add('visible')
 
-    console.log(visibleImage, images.length);
 
-
-    
 }
 )
 
@@ -59,17 +56,13 @@ next.addEventListener ('click', function() {
         visibleImage = 0;
         
     }
+
     currentImage.classList.remove('visible');
 
     const allImage = document.querySelectorAll('.carosel img');
-    console.log(allImage);
 
     allImage[visibleImage].classList.add('visible');
-
     
-    console.log(visibleImage, images.length);
-    
-
    
 }
 )
